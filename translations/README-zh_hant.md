@@ -43,7 +43,7 @@
         - [URL，URI，URN - 你知道它們的區別嗎？](#urluriurn---你知道它們的區別嗎)
     - [CI/CD](#cicd)
         - [簡單解釋 CI/CD Pipeline](#簡單解釋-cicd-pipeline)
-        - [Netflix 技術堆疊（CI/CD Pipeline）](#netflix-技術堆疊-cicd-pipeline)
+        - [Netflix 技術堆疊（CI/CD Pipeline）](#netflix-技術堆疊cicd-pipeline)
     - [架構模式](#架構模式)
         - [MVC、MVP、MVVM、MVVM-C 和 VIPER](#mvcmvpmvvmmvvm-c-和-viper)
         - [每一位開發者都必須知道的 18 個關鍵設計模式](#每一位開發者都必須知道的-18-個關鍵設計模式)
@@ -497,28 +497,28 @@ URN 代表統一資源名稱（Uniform Resource Name）。它使用 urn 協定�
   <img src="../images/ci-cd-pipeline.jpg" style="width: 680px" />
 </p>
 
-第 1 节 - SDLC 和 CI/CD
+第一部分 - SDLC 與 CI/CD
 
-软件开发生命周期（software development life cycle，SDLC）由几个关键阶段组成：开发、测试、部署和维护。CI/CD 自动化并集成这些阶段，以实现更快、更可靠的发布。
+軟體開發生命週期（software development life cycle，SDLC）包含幾個關鍵階段：開發、測試、部署和維護。CI/CD 自動化與整合這些階段，以實現更快且更可靠的發佈。
 
-当代码被推送到 git 仓库时，它会触发自动构建和测试过程。端到端 (e2e) 测试用例被运行以验证代码。如果测试通过，代码可以自动部署到预发布（staging）/生产（production）环境。如果发现问题，代码将被发送回开发以修复错误。这种自动化为开发人员提供了快速反馈，并降低了生产中出现错误的风险。
+當程式碼推送到 git Repo 時，它會觸發自動化的建置和測試過程。端到端 (e2e) 測試案例會執行以驗證程式碼。如果測試通過，程式碼可以自動部署到預備（staging）/ 生產（production）環境。如果發現問題，程式碼會被送回開發階段進行錯誤修復。這種自動化為開發人員提供了快速反饋，並減少了生產環境中出現錯誤的風險。
 
-第 2 节 - CI 和 CD 的区别
+第二部分 - CI 和 CD 的區別
 
-持续集成 (Continuous Integration，CI) 自动执行构建、测试和合并过程。只要提交代码，它就会运行测试以尽早检测集成问题。它鼓励频繁的代码提交和快速反馈。
+持續整合 (Continuous Integration，CI) 自動化建置、測試和合併過程。每當程式碼提交時，它都會運行測試，以便及早檢測整合問題。這鼓勵頻繁的程式碼提交和快速反饋。
 
-持续交付 (Continuous Delivery，CD) 可自动执行基础架構更改和部署等发布流程。它确保可以通过自动化工作流程随时可靠地发布软件。CD 还可以自动执行生产部署之前所需的手动测试和批准步骤。
+持續交付 (Continuous Delivery，CD) 自動化發佈過程，如基礎設施變更和部署。它確保軟體可以隨時通過自動化工作流程可靠地發佈。CD 也可以自動化生產部署前所需的手動測試和批准步驟。
 
-第 3 节 - CI/CD Pipeline
+第三部分 - CI/CD Pipeline
 
-典型的 CI/CD Pipeline有几个相连的阶段：
-- 开发者提交代码更改到源代码管理
-- CI 服务器检测变更，然后触发构建
-- 对代码进行编译测试（单元测试，集成测试）
-- 将测试结果报告给开发者
-- 一旦成功，就会将其部署到预发布环境
-- 发布前，可能会在预发布环境上进行进一步测试
-- CD 系统将批准的变更发布到生产环境
+一個典型的 CI/CD Pipeline 有幾個連接的階段：
+- 開發者將程式碼變更提交到版本控制系統
+- CI 伺服器檢測到變更並觸發建置
+- 程式碼被編譯並測試（單元測試，整合測試）
+- 測試結果報告給開發者
+- 一旦成功後，就會將其部署到預備環境
+- 在發佈前可能會在預備環境進行進一步測試
+- CD 系統將批准的變更部署到生產環境
 
 ### Netflix 技術堆疊（CI/CD Pipeline）
 
@@ -526,23 +526,21 @@ URN 代表統一資源名稱（Uniform Resource Name）。它使用 urn 協定�
   <img src="../images/netflix-ci-cd.jpg" style="width: 720px" />
 </p>
 
-规划：Netflix 工程使用 JIRA 进行规划，使用 Confluence 进行文件编制。
+規劃：Netflix 團隊使用 JIRA 進行規劃，並使用 Confluence 進行文件記錄。
 
-编码：Java 是后端服务的主要编程語言，同时，不同场景中也会使用其他語言。
+編碼：Java 是後端服務的主要程式語言，其他語言則用於不同的使用情境。
 
-构建：Gradle 主要用于构建，构建不同的 Gradle 插件以支持不同的使用場景。
+建置：主要使用 Gradle 進行建置，並建立 Gradle 插件以支援各種使用情境。
 
-打包：包和依赖项打包到 Amazon 系统映像 (AMI) 中以供发布。
+封裝：將套件和相依性打包成 Amazon Machine Image (AMI) 以供發佈。
 
-测试：测试强调生产文化对构建混沌工具（chaos tool）的关注。（译注：混沌测试是一种手段，随机在系统里触发一些故障，看系统的反映情况。）
+測試：測試強調生產文化，專注於建立混沌工具（chaos tool）。
 
-部署：Netflix 使用自建的 Spinnaker 进行金丝雀部署（canary rollout deployment）
-> 更多关于“金丝雀部署”，可以檢視[这里](https://glossary.cncf.io/zh-cn/canary-deployment/)
+部署：Netflix 使用自建的 Spinnaker 進行金絲雀部署（canary rollout deployment）。
 
-监控：监控指标集中在 Atlas 中，使用 Kayenta 来检测异常情况。
+監控：監控指標集中在 Atlas 中，並使用 Kayenta 來檢測異常。
 
-事件（incident）报告：事件按照优先级调度，使用 PagerDuty 进行事件处理。
-
+事件報告：事件根據優先級進行分派，並使用 PagerDuty 來處理事件。
 
 ## 架構模式
 

@@ -40,7 +40,7 @@
         - [TCP/IP 封裝](#tcpip-封裝)
         - [為什麼 Nginx 被叫做「反向」代理？](#為什麼-nginx-被叫做反向代理)
         - [常見的負載平衡演算法有哪些？](#常見的負載平衡演算法有哪些)
-        - [URL，URI，URN - 你知道它們之間的差異嗎？](#urluriurn---你知道它們之間的差異嗎)
+        - [URL，URI，URN - 你知道它們的區別嗎？](#urluriurn---你知道它們的區別嗎)
     - [CI/CD](#cicd)
         - [簡單解釋 CI/CD Pipeline](#簡單解釋-cicd-pipeline)
         - [Netflix 技術堆疊（CI/CD Pipeline）](#netflix-技術堆疊-cicd-pipeline)
@@ -464,9 +464,9 @@ HTTP 狀態碼分為五個類別：
 
    新的請求會發送到回應時間最快的服務實例。
 
-### URL，URI，URN - 你知道它們之間的差異嗎？
+### URL，URI，URN - 你知道它們的區別嗎？
 
-下图显示了 URL、URI 和 URN 的比较。
+下圖顯示了 URL、URI 和 URN 的比较。
 
 <p>
   <img src="../images/url-uri-urn.jpg" />
@@ -474,20 +474,20 @@ HTTP 狀態碼分為五個類別：
 
 - URI
 
-URI 表示统一资源标识符（Uniform Resource Identifier）。它标识網路上的逻辑或物理资源。URL 和 URN 是 URI 的子类型。URL定位资源，而 URN 命名资源。
+URI 代表統一資源識別碼（Uniform Resource Identifier）。它識別網路上的邏輯或物理資源。URL 和 URN 是 URI 的子類型。URL 定位資源，而 URN 命名資源。
 
-URI 由以下部分组成：
+URI 由以下部分組成：
 scheme:[//authority]path[?query][#fragment]
 
 - URL
 
-URL 表示统一资源定位符（Uniform Resource Locator），是 HTTP 的关键概念。它是網路上唯一资源的地址。它可以与 FTP 和 JDBC 等其他協定一起使用。
+URL 代表統一資源定位符（Uniform Resource Locator），是 HTTP 的關鍵概念。它是網路上唯一資源的地址。它也可以與其他協定如 FTP 和 JDBC 一起使用。
 
 - URN
 
-URN 表示统一资源名称（Uniform Resource Name）。它使用 urn 方案。不能用 URN 来定位资源。图中给出了一个简单示例，它由命名空间和特定于命名空间的字符串组成。
+URN 代表統一資源名稱（Uniform Resource Name）。它使用 urn 協定。URN 不能用來定位資源。圖中給出的簡單例子由命名空間和命名空間特定的字串組成。
 
-如果您想了解有关该主题的更多详细信息，我建议您檢視 [W3C 的说明](https://www.w3.org/TR/uri-clarification/)。
+如果你想了解更多詳細資訊，我建議參考 [W3C 的說明](https://www.w3.org/TR/uri-clarification/)。
 
 ## CI/CD
 

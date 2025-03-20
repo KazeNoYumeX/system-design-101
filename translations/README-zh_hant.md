@@ -546,16 +546,16 @@ URN 代表統一資源名稱（Uniform Resource Name）。它使用 urn 協定�
 
 ### MVC、MVP、MVVM、MVVM-C 和 VIPER
 
-这些架構模式是應用程式开发（无论是是在 iOS 还是 Android 平台上）中最常用的模式。开发人员引入它们是为了克服早期模式的局限性。那么，它们有何不同？
+這些架構模式是應用程式開發中最常用的模式，不論是在 iOS 還是 Android 平台。開發人員導入它們來克服早期模式的限制。那麼，它們有什麼不同呢？
 
 <p>
   <img src="../images/client arch patterns.png" style="width: 720px" />
 </p>
 
-- MVC，最古老的模式，最早可追溯到近 50 年前
-- 每一种模式都有一个“視圖”（view, V），负责显示内容和接收用户输入
-- 大部分的模式都包括一个“模型（model，M）”，用来管理业务数据
-- “控制器（Controller）”、“主持人（Presenter）”和“視圖模型（View-Model）”都是转换器，负责視圖和模型（VIPER 模式中的“实体”）之间的通信。
+- MVC，最古老的模式，最早可追溯到將近 50 年前
+- 每個模式都有一個 "View" (V)，負責顯示內容和接收使用者輸入
+- 大部分的模式都包含一個 "Model" (M) ，用於管理業務資料
+- "Controller" 、 "Presenter" 和 "View-Model" 是介於 View 和 Model 之間的轉換器 (在 VIPER 模式中是 "Entity" ）。
 
 ### 每一位開發者都必須知道的 18 個關鍵設計模式
 
